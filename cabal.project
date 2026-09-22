@@ -1,0 +1,4 @@
+packages: .
+
+-- Use the installed GHC explicitly; let cabal pick the matching base bound.
+with-compiler: ghc-9.10.3
