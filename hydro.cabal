@@ -58,7 +58,19 @@ library
     import:           warnings
 
     -- Modules exported by the library.
-    exposed-modules:  MyLib
+    exposed-modules:
+        Hydro.Action
+        Hydro.DryRun
+        Hydro.Example.AgentWorkflow
+        Hydro.Executor
+        Hydro.Fork
+        Hydro.Jev
+        Hydro.Judge
+        Hydro.Policy
+        Hydro.Predicate
+        Hydro.State
+        Hydro.Trace
+        Hydro.Workflow
 
     -- Modules included in this library but not exported.
     -- other-modules:
@@ -67,7 +79,11 @@ library
     -- other-extensions:
 
     -- Other library packages from which modules are imported.
-    build-depends:    base ^>=4.20.2.0
+    build-depends:
+        base ^>=4.20.2.0,
+        containers,
+        directory,
+        process
 
     -- Directories containing source files.
     hs-source-dirs:   src
@@ -91,6 +107,7 @@ executable hydro
     -- Other library packages from which modules are imported.
     build-depends:
         base ^>=4.20.2.0,
+        containers,
         hydro
 
     -- Directories containing source files.
@@ -124,4 +141,6 @@ test-suite hydro-test
     -- Test dependencies.
     build-depends:
         base ^>=4.20.2.0,
+        containers,
+        directory,
         hydro
